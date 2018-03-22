@@ -10,7 +10,6 @@ import retrofit2.http.Query;
  * Interface used to create our api endpoints
  * Created by michlg on 23/02/2018.
  */
-
 public interface YoutubeClient {
     @GET("/youtube/v3/search")
     Call<YoutubeResult> listItems(@Query("key") String apikey,

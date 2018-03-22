@@ -18,21 +18,22 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Retrofit r = new Retrofit.Builder()
-                .baseUrl("https://www.googleapis.com")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
+        Retrofit r = RetrofitClient.getRetrofitClient("https://www.googleapis.com");
 
         YoutubeClient service = r.create(YoutubeClient.class);
 
-        Call<YoutubeResult> yres = service.listItems("AIzaSyCLflXUAXwY1xWUfgYWK0txiaWAh1om8Y8", "damso", "snippet", 25);
+        Call<YoutubeResult> yres = service
+                .listItems("AIzaSyCLflXUAXwY1xWUfgYWK0txiaWAh1om8Y8",
+                        "esilv",
+                        "snippet",
+                        25);
+
         yres.enqueue(new Callback<YoutubeResult>() {
             @Override
             public void onResponse(Call<YoutubeResult> call, Response<YoutubeResult> response) {
-                if(response.isSuccessful()){
+                if (response.isSuccessful()) {
                     Log.i("RESPONSE", response.body().toString());
-                }
-                else{
+                } else {
                     Log.i("RESPONSE CODE", String.valueOf(response.code()));
                 }
             }

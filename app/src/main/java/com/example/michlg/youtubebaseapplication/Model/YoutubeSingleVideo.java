@@ -7,8 +7,7 @@ import com.google.gson.annotations.SerializedName;
  * This object stores the snippet of our youtube video
  * Created by michlg on 16/03/2018.
  */
-
-public class YoutubeSingleSnippet {
+public class YoutubeSingleVideo {
     //region Model
     /**
      * Single youtube video snippet - basically a single item from the list of results
@@ -17,12 +16,16 @@ public class YoutubeSingleSnippet {
     @SerializedName("snippet")
     @Expose
     private YoutubeVideoSnippet snippet;
+
+    @SerializedName("id")
+    @Expose
+    private YoutubeId id;
     //endregion
 
     //region toString override
     @Override
     public String toString() {
-        return "YoutubeSingleSnippet{" +
+        return "YoutubeSingleVideo{" +
                 "snippet=" + snippet +
                 '}';
     }
@@ -36,5 +39,14 @@ public class YoutubeSingleSnippet {
     public void setSnippet(YoutubeVideoSnippet snippet) {
         this.snippet = snippet;
     }
+
+    public YoutubeId getId() {
+        return id;
+    }
+
+    public void setId(YoutubeId id) {
+        this.id = id;
+    }
+
     //endregion
 }

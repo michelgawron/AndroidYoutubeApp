@@ -7,7 +7,6 @@ import com.google.gson.annotations.SerializedName;
  * This object stores the thumbnails associated with a youtube video - their images
  * Created by michlg on 16/03/2018.
  */
-
 public class YoutubeThumbnails {
     //region Model
     /**

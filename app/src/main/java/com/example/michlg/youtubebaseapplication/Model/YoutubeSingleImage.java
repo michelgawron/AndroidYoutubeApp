@@ -7,8 +7,7 @@ import com.google.gson.annotations.SerializedName;
  * This object stores images attributes
  * Created by michlg on 16/03/2018.
  */
-
-class YoutubeSingleImage {
+public class YoutubeSingleImage {
     //region Model
     /**
      * Image's url

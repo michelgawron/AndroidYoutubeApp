@@ -7,7 +7,6 @@ import com.google.gson.annotations.SerializedName;
  * This object stores a single result from our list
  * Created by michlg on 16/03/2018.
  */
-
 public class YoutubeVideoSnippet {
     //region Model
     /**
@@ -37,9 +36,14 @@ public class YoutubeVideoSnippet {
     @SerializedName("thumbnails")
     @Expose
     private YoutubeThumbnails thumbnails;
+
+    @SerializedName("channelId")
+    @Expose
+    private String youtubeChannelId;
     //endregion
 
-    //region toString override
+    //region Override toString method
+
     @Override
     public String toString() {
         return "YoutubeVideoSnippet{" +
@@ -47,6 +51,7 @@ public class YoutubeVideoSnippet {
                 ", title='" + title + '\'' +
                 ", description='" + description + '\'' +
                 ", thumbnails=" + thumbnails +
+                ", youtubeChannelId='" + youtubeChannelId + '\'' +
                 '}';
     }
     //endregion
@@ -82,6 +87,14 @@ public class YoutubeVideoSnippet {
 
     public void setThumbnails(YoutubeThumbnails thumbnails) {
         this.thumbnails = thumbnails;
+    }
+
+    public String getYoutubeChannelId() {
+        return youtubeChannelId;
+    }
+
+    public void setYoutubeChannelId(String youtubeChannelId) {
+        this.youtubeChannelId = youtubeChannelId;
     }
     //endregion
 }
